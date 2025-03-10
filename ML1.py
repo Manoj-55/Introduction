@@ -6,20 +6,17 @@ from sklearn.metrics import mean_squared_error, mean_absolute_error, r2_score
 import numpy as np
 import matplotlib.pyplot as plt
 
-# Load the dataset (CSV file)
-df = pd.read_csv(r'C:\Users\manoj\OneDrive\Desktop\DATA ANALYTICS\Final year Project\bothEDMdata2.csv')
+# Load the dataset
+file_path = r'C:\Users\manoj\OneDrive\Desktop\DATA ANALYTICS\Final year Project\bothEDMdata2.csv'
+df = pd.read_csv(file_path)
 
-# Rename columns if needed (adjust this part as per your dataset)
-df.columns = ['Run Order', 'Type', 'Pulse On (μs)', 'Pulse Off (μs)',
-              'Wire Feed Rate (mm/min)', 'Avg Gap Voltage (V)', 
-              'Kerf Width (mm)', 'MRR (mm3/min)']
+df.columns = ['Run Order', 'Pulse On', 'Pulse Off',
+              'Wire Feed Rate', 'Voltage', 'Cutting Speed',
+              'Kerf Width', 'SR', 'MRR']
 
-# Select features and target variable
-features = ['Pulse On (μs)', 'Pulse Off (μs)', 
-            'Wire Feed Rate (mm/min)', 'Avg Gap Voltage (V)', 
-            'Kerf Width (mm)']
-target = 'MRR (mm3/min)'
-
+# Define input features and target
+features = ['Pulse On', 'Pulse Off', 'Wire Feed Rate', 'Voltage', 'Cutting Speed', 'Kerf Width', 'SR']
+target = 'MRR'
 X = df[features]
 y = df[target]
 
