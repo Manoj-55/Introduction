@@ -45,7 +45,7 @@ def print_performance(y_true, y_pred, model_name):
     print(f"R²: {r2}")
     print(f"RMSE: {rmse}")
     print(f"MAE: {mae}")
-    print("---------------------------")
+    print("----------------")
 
 # Evaluate performance for all models
 print_performance(y, y_pred_lr, "Linear Regression")
